@@ -1,110 +1,46 @@
 # ![GA Logo](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 4: Choose Your Own Adventure
 
-Pick a Kaggle competition from the following list. You have the choice of completing a regression problem, a classification problem, or an NLP problem involving either classification or sentiment analysis. Perform some EDA, and fit and evaluate at least two models on the dataset you've chosen.
+Problem Statement: In this data science project, our goal is to develop a regression model to predict movie revenue based on a comprehensive dataset containing movie attributes such as budget, genre, release date, and more. The dataset also includes information about production companies, cast, and crew. By accurately predicting revenue, our film production and distribution company aims to make data-driven decisions related to budget allocation, marketing strategies, and release plans. Success will be measured by the model's ability to minimize prediction errors and maximize the explained variance in revenue, ultimately improving the profitability of our movie releases.
 
-## Datasets
+Data Dictionary (from Original Dataset):
+id: Unique identifier for each movie.
+belongs_to_collection: Information about whether the movie belongs to a collection or franchise.
+budget: The budget allocated for the movie's production.
+genres: The genres associated with the movie.
+homepage: The movie's official website, if available.
+imdb_id: The IMDb identifier for the movie.
+original_language: The original language in which the movie was made.
+original_title: The original title of the movie.
+overview: A brief overview or synopsis of the movie.
+popularity: A measure of the movie's popularity.
+poster_path: Path to the movie's poster image.
+production_companies: Companies involved in the production of the movie.
+production_countries: Countries where the movie was produced.
+release_date: The release date of the movie.
+runtime: The duration of the movie in minutes.
+spoken_languages: Languages spoken in the movie.
+status: The current status of the movie (e.g., released or in production).
+tagline: A tagline or slogan associated with the movie.
+title: The title of the movie.
+Keywords: Keywords or phrases associated with the movie.
+cast: Information about the movie's cast.
+crew: Information about the movie's crew.
+**Dummified some of the columns**
 
-### Regression
+Modelling types:
+- Multiple linear regression
+- Lasso regression
+- Random forest regression
+- Deceision trees regression
 
-- [Restaurant Revenue Prediction](https://www.kaggle.com/c/restaurant-revenue-prediction)
-- [Video Game Sales Prediction](https://www.kaggle.com/rush4ratio/video-game-sales-with-ratings)
-- [Box Office Revenue Prediction](https://www.kaggle.com/c/tmdb-box-office-prediction)
-- [New York City Taxi Fare Prediction](https://www.kaggle.com/c/new-york-city-taxi-fare-prediction)
+Results:
+- Baseline mean for y: 75022033.11 
+- Predictions mean for y (Using random forest regressor): 72559718.4791077
 
-### Classification
+Conclusion/Reccomendation:
+- Able to fit various models, produced slightly overfit model that gave us .706 R2 on test with 0.87 on train
+- Extract relevant/important information and dummify certain columns which were dropped such as cast & production_companies
+- Tune more or try other regression models to try and improve performance
 
-- [Predicting a Biological Response](https://www.kaggle.com/c/bioresponse/data)
-- [Kobe Bryant Shot Selection](https://www.kaggle.com/c/kobe-bryant-shot-selection)
-- [Shelter Animal Outcomes](https://www.kaggle.com/c/shelter-animal-outcomes)
-- [Airbnb New User Bookings](https://www.kaggle.com/c/airbnb-recruiting-new-user-bookings)
-
-### NLP
-
-- [Sentiment Analysis on Movie Reviews](https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews) / [Alternative Sentiment Analysis on Movie Reviews](https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews)
-- [What's Cooking?](https://www.kaggle.com/c/whats-cooking)
-- [Women's E-Commerce Clothing Reviews](https://www.kaggle.com/nicapotato/womens-ecommerce-clothing-reviews)
-
-### Image Classification
-
-- [Kannada MNIST](https://www.kaggle.com/c/Kannada-MNIST)
-- [Intel Image Classification](https://www.kaggle.com/puneet6060/intel-image-classification)
-
-## Timeline
-
-- **9am**: Project introduction.
-- **10am**: By 10am, answer the [check-in form](https://forms.gle/kWcfTZjGRj18LHUz6) with the dataset you've chosen.
-- **4pm**: 3-minute lightning talks where you walk us through your process. **No slides necessary** -- it's fine if you'd prefer walk us through your Jupyter notebook instead, but remember you only have 3 minutes!
-- **5pm**: Make sure your project work has been pushed.
-
-## Guidelines
-
-We know this is a short time for a project. We're not expecting anything as polished as project two or three. However, the goal is for you to have something to show for your time. At a minimum, do some EDA and have at least two models fit and scored.
-
-## Rubric
-
-You must meet the 4 criteria outlined below to receive project credit.
-When evaluated against the rubric, we'll take into account that that you had a very limited amount of time to work on this project. Do your best with the time you have.
-
-- Perform basic EDA (examples: report summary statistics, use visuals to explore your dataset)
-- If necessary, perform basic data cleaning (examples: handle null values, clean data entry errors). If not necessary, outlining & interpreting checks and balances completed during EDA to make that determination.
-- Make a baseline model
-- Fit, score, and evaluate at least two models
-- Compare, identify and explain "best" model
-   
-   
-_For additional guidance, you may refer to the detailed breakdown of suggested steps for each given section._
-### Data Cleaning and EDA
-
-- Are missing values imputed/handled appropriately?
-- Are distributions examined and described?
-- Are outliers identified and addressed?
-- Are appropriate summary statistics provided?
-- Are steps taken during data cleaning and EDA framed appropriately?
-
-### Visualizations
-
-- Are sufficient visualizations provided?
-- Do plots accurately demonstrate valid relationships?
-- Are plots labeled properly?
-- Are plots interpreted appropriately?
-- Are plots formatted and scaled appropriately for inclusion in a notebook-based technical report?
-
-### Preprocessing and Modeling
-
-- Are categorical variables appropriately handled?
-- Does the student properly split and/or sample the data for validation/training purposes?
-- Does the student utilize feature selection to remove noisy or multi-collinear features?
-- Does the student test and evaluate a variety of models to identify a production algorithm?
-- Does the student defend their choice of production model relevant to the data at hand and the problem?
-- Does the student explain how the model works and evaluate its performance successes/downfalls?
-
-### Evaluation and Conceptual Understanding
-
-- Does the student accurately identify and explain the baseline score?
-- Does the student select and use metrics relevant to the problem objective?
-- Does the student interpret the results of their model for purposes of inference?
-- Is domain knowledge demonstrated when interpreting results?
-
-### Project Organization
-
-- Are modules imported correctly (using appropriate aliases)?
-- Does the README provide a good executive summary of the project?
-- Is markdown formatting used appropriately to structure notebooks?
-- Are there an appropriate amount of comments to support the code?
-- Are files & directories organized correctly?
-- Are there unnecessary files included?
-- Do files and directories have well-structured, appropriate, consistent names?
-
-### Python Syntax and Control Flow
-
-- Is care taken to write human readable code?
-- Is the code syntactically correct (no runtime errors)?
-- Does the code generate desired results (logically correct)?
-- Does the code follows general best practices and style guidelines?
-- Are Pandas and sklearn functions used appropriately?
-
-## Note
-
-Do not duplicate someone else's analysis and make sure to give credit to any resources you used. :)
-
-Have fun!
+Sources:
+- Referred back to previous lessons, labs and projects and various sites which are mentioned in the cells they're used
